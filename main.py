@@ -1,8 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 import json
-
+import os
 app = FastAPI()
 
 app.mount("/photos", StaticFiles(directory="photos"), name="photos")
@@ -18,7 +19,16 @@ app.add_middleware(
 with open('wheels.json') as f:
     data = json.load(f)
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
+def read_root():
+    try:
+        with open('index.html', 'r') as f:
+            html_content = f.read()
+        return HTMLResponse(content=html_content, status_code=200)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Index.html not found")
+    
+@app.get("/all")
 def read_root():
     return data
 
