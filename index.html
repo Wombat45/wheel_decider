@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wheels Catalog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0F2027, #203A43, #2C5364); /* Cosmic gradient */
+            font-size: 18px; /* Increase the base font size */
+        }
+        h1 {
+            color: #fff; /* White title */
+            font-size: 2em; /* Make the title twice as large as the base font size */
+        }
+        .wheel {
+            border: 1px solid #ddd;
+            margin: 20px; /* Increase margin */
+            padding: 20px; /* Increase padding */
+            width: 300px; /* Increase width */
+            text-align: center;
+            background-color: #fff; /* White background for each wheel */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            color: #000; /* Black text for each wheel */
+        }
+        .wheel img {
+            width: 100%;
+            height: 300px; /* Increase image height */
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wheels Catalog</h1>
+    <div id="wheels"></div>
+
+    <script>
+        $(document).ready(function(){
+            $.get("http://localhost:8000/wheels", function(data, status){
+                data.forEach(function(wheel) {
+                    var wheelDiv = $('<div class="wheel"></div>');
+                    wheelDiv.append('<img src="' + wheel.photo + '">');
+                    wheelDiv.append('<h2>' + wheel.name + '</h2>');
+                    wheelDiv.append('<p>Size: ' + wheel.size + '</p>');
+                    wheelDiv.append('<p>Price: ' + wheel.price + '</p>');
+                    wheelDiv.append('<p>Weight: ' + wheel.weight + '</p>');
+                    $('#wheels').append(wheelDiv);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

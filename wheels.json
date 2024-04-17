@@ -1,0 +1,58 @@
+{
+    "wheels": [
+        {
+            "name": "Enkei RPF1",
+            "size": "18x9 +35",
+            "price": "$1497",
+            "weight": "17.1 lbs",
+            "photo": "photos/enkei_rpf1_01.jpeg"
+        },
+        {
+            "name": "Neuspeed RSE10",
+            "size": "18x8.5 +45",
+            "price": "$1440",
+            "weight": "19.25 lbs",
+            "photo": "photos/neuspeed_rse10_01.jpeg"
+        },
+        {
+            "name": "Rotiform DTM",
+            "size": "18x8.5 +35",
+            "price": "$1360",
+            "weight": "25.82 lbs",
+            "photo": "photos/rotiform_dtm_01.jpeg"
+        },
+        {
+            "name": "Aodhan AH11",
+            "size": "18x8.5 +35",
+            "price": "$872",
+            "weight": "18.8 lbs",
+            "photo": "photos/adohan_ah11_01.jpeg"
+        }
+    ],
+    "tires": [
+        {
+            "name": "Michelin Pilot Sport 4S",
+            "size": "245/40/18",
+            "price": "$1000",
+            "weight": "22 lbs"
+        },
+        {
+            "name": "Continental ExtremeContact Sport",
+            "size": "245/40/18",
+            "price": "$800",
+            "weight": "22 lbs"
+        },
+        {
+            "name": "Bridgestone Potenza RE-71R",
+            "size": "245/40/18",
+            "price": "$900",
+            "weight": "22 lbs"
+        },
+        {
+            "name": "Hankook Ventus V12 Evo2",
+            "size": "245/40/18",
+            "price": "$700",
+            "weight": "22 lbs"
+        }
+    ]
+}
